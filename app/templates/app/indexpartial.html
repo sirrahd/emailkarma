@@ -1,0 +1,28 @@
+{% if score %}
+    <div class="text-center">
+        <img src="/static/app/content/number/{{objects.number}}.png" />
+    </div>
+
+    <div class="text-center">
+        <h1>{{objects.text}}</h1>
+    </div>
+
+    <div class="text-center">
+        <img src="/static/app/content/slider/{{objects.slider}}.png" />
+    </div>
+
+    <p></p>
+    
+    {% if detail.manish1.debug.words.negative %}
+    <div class="container">
+        <div class="well">
+            <p>A few words may not be well received:</p>
+            <ul>
+                {% for word in detail.manish1.debug.words.negative %}
+                <li>{{word}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    {% endif %}
+{% endif %}

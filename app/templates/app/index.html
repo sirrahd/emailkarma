@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>EmailKarma</title>
+    <link rel="stylesheet" type="text/css" href= '/static/app/content/bootstrap.min.css' />
+</head>
+<body>
+    <div class="container" style="margin-top:10px">
+        <div class="media">
+            <a class="pull-left" href="/">
+                <img class="media-object" src="/static/app/content/flower-small.png" />
+            </a>
+            <div class="media-body">
+                <h1 class="media-heading">EmailKarma</h1>
+            </div>
+        </div>
+    </div>
+
+    {% include 'app/indexpartial-vert.html' %}
+    <div class="clearfix"></div>
+<div class="container">
+    {% if score %}
+    <h3>You said:</h3>
+    <pre>{{text}}</pre>
+    {% endif %}
+
+    <form action="/" method="POST" role="form">
+        <textarea name="text" class="form-control" placeholder="Give me some text" rows=10></textarea>
+        <input type="submit" value="Submit" class="btn btn-default">
+    </form>
+    {% if score %}
+    <br />
+    <br />
+    <div class="well">
+        <h4>Debug information</h4>
+        <pre>{{raw}}</pre>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>
